@@ -1,28 +1,23 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <!-- 未來新增navbar -->  
+    <main class="container">
+      <h1 class="main__title">結帳</h1>
+      <router-view/>
+    </main>
+    <!-- 未來新增footer -->
   </div>
 </template>
 
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Noto+Sans+TC:wght@400;500;700&family=Nunito+Sans:wght@400;700&display=swap');
+
+</style>
+
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import "@/assets/main.css"
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+  
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
