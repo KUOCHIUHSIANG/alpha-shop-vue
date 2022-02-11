@@ -1,10 +1,7 @@
 <template>
   <div id="app">
-    <!-- 未來新增navbar -->  
-    <main class="container">
-      <h1 class="main__title">結帳</h1>
-      <router-view/>
-    </main>
+    <!-- 未來新增navbar -->
+    <router-view/>
     <!-- 未來新增footer -->
   </div>
 </template>

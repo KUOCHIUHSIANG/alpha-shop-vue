@@ -1,13 +1,20 @@
 <template>
-  <Stepper />
+  <main class="container">
+    <h1 class="main__title">結帳</h1>
+    <Stepper />
+    <Cart />
+    
+  </main>   
 </template>
 
 <script>
 import Stepper from '../components/stepper.vue'
+import Cart from '../components/cart.vue'
 
 export default {
   components: {
-    Stepper
+    Stepper,
+    Cart
   }
 }
 </script>
