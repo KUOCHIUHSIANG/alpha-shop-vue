@@ -40,7 +40,7 @@
   <div class="main__cart__footer">
     <div class="main__cart__footer__fee">
       <div class="title">運費</div>
-      <div class="fee"><span class="fee">免費</span></div>
+      <div :class="['fee', { currencySymbol: deliveryFee !== '免費' }]">{{ deliveryFee }}</div>
     </div>
     <div class="main__cart__footer__total">
       <div class="title">小計</div>
@@ -49,3 +49,14 @@
   </div>
 </div>
 </template>
+
+<script>
+export default {
+  props: {
+    deliveryFee: {
+      type: [String, Number],
+      default: '免費'
+    }
+  }
+}
+</script>

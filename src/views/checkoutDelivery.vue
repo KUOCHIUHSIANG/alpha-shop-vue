@@ -2,7 +2,7 @@
   <main class="container">
     <h1 class="main__title">結帳</h1>
     <Stepper :initial-current-page="currentPage" />
-    <Cart />
+    <Cart :delivery-fee="deliveryFee" />
     <div class="main__form">
       <form id="a-form">
         <div class="main__form__content">
@@ -10,8 +10,9 @@
             <h3 class="main__form-title">運送方式</h3>
             <div class="main__form__grid-area-part-two">
               <div class="form-row delivery standard-delivery">
-                <label for="standard-delivery" class="standard-delivery delivery-active">
-                  <input id="standard-delivery" type="radio" name="delivery" checked>
+                <label for="standard-delivery" 
+                :class="['standard-delivery', { 'delivery-active':  deliverySelected === 'standard' }]">
+                  <input @change="onChange($event)" v-model="deliverySelected" id="standard-delivery" value="standard" type="radio" name="delivery" checked>
                   <div class="standard-delivery__wrapper">
                     <div class="standard-delivery__wrapper__title">
                       <span>標準運送</span>
@@ -24,8 +25,9 @@
                 </label>
               </div>
               <div class="form-row delivery dhl-delivery">
-                <label for="dhl-delivery" class="dhl-delivery">
-                  <input id="dhl-delivery" type="radio" name="delivery">
+                <label for="dhl-delivery"
+                :class="['dhl-delivery', { 'delivery-active':  deliverySelected === 'dhl' }]">
+                  <input @change="onChange($event)" v-model="deliverySelected" id="dhl-delivery" value="dhl" type="radio" name="delivery">
                   <div class="dhl-delivery__wrapper">
                     <div class="dhl-delivery__wrapper__title">
                       <span>DHL 貨運</span>
@@ -60,6 +62,21 @@ export default {
   data() {
     return {
       currentPage: 2,
+      deliverySelected: 'standard',
+      deliveryFee: '免費'
+    }
+  },
+  methods: {
+    onChange(event) {
+      const data = event.target.value
+      if(data === 'standard'){
+        this.deliveryFee = '免費'
+        console.log('免費')
+      } else if(data === 'dhl'){
+        this.deliveryFee = 500
+        console.log('500')
+      }
+
     }
   }
 }
