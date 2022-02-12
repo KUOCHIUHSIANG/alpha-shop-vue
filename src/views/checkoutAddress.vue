@@ -52,7 +52,7 @@
         </div>
       </form>
     </div>
-    <Button />
+    <Button :initial-current-page="currentPage" />
   </main>   
 </template>
 
@@ -61,11 +61,18 @@ import Stepper from '../components/stepper.vue'
 import Cart from '../components/cart.vue'
 import Button from '../components/checkoutButton.vue'
 
+// const STORAGE_KEY = "alpha-shop-vue"
+
 export default {
   components: {
     Stepper,
     Cart,
     Button
+  },
+  data() {
+    return {
+      currentPage: 1,
+    }
   }
 }
 </script>

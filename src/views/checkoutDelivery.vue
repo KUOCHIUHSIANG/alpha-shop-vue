@@ -42,7 +42,7 @@
         </div>
       </form>
     </div>
-    <Button />
+    <Button :initial-current-page="currentPage" />
   </main>   
 </template>
 
@@ -56,6 +56,11 @@ export default {
     Stepper,
     Cart,
     Button
+  },
+  data() {
+    return {
+      currentPage: 2,
+    }
   }
 }
 </script>
