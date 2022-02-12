@@ -1,7 +1,7 @@
 <template>
   <main class="container">
     <h1 class="main__title">結帳</h1>
-    <Stepper />
+    <Stepper :initial-current-page="currentPage" />
     <Cart />
     <div class="main__form">
       <form id="a-form">
