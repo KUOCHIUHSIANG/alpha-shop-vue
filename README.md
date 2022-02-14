@@ -1,4 +1,18 @@
 # alpha-shop-vue
++ Use the vue framework to practice alpha-shop project.
+
+## ScreenShots
+* Step1 checkoutAddress Page
+![image](./screenshot/alpha-shop-vue-step1.png)
+
+* Step2 checkoutDelivery Page
+![image](./screenshot/alpha-shop-vue-step2.png)
+
+* Step3 checkoutPayment Page
+![image](./screenshot/alpha-shop-vue-step3.png)
+
+* Cart calc example
+![image](./screenshot/alpha-shop-vue-cart-calc.png)
 
 ## Project setup
 ```
