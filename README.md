@@ -12,7 +12,7 @@
 ![image](./screenshot/alpha-shop-vue-step3.png)
 
 * Cart calc example
-![image](./screenshot/alpha-shop-vue-cart-calc.png)
+![image](./screenshot/alpha-shop-vue-cart-calc.gif)
 
 ## Project setup
 ```
