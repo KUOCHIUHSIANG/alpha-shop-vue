@@ -50,13 +50,13 @@ const dummyData = {
     {
       id: 1,
       name: "破壞補丁修身牛仔褲",
-      image: "/img/cart_item_01.f164f523.png",
+      image: "/images/cart_item_01.png",
       price: 3999,
     },
     {
       id: 2,
       name: "刷色直筒牛仔褲",
-      image: "/img/cart_item_02.53c490ec.png",
+      image: "/images/cart_item_02.png",
       price: 1299,
     },
   ],

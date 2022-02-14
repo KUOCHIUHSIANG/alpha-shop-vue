@@ -31,6 +31,11 @@ export default {
     return {
       currentPage: this.initialCurrentPage,
     }
+  },
+  watch: {
+    initialCurrentPage(value) {
+      this.currentPage = value
+    }
   }
 }
 </script>

@@ -44,18 +44,16 @@ export default {
     redirectNextPage(currentPage) {
       const nextPage = currentPage + 1
       if (nextPage < 4) {
-        this.$router.push('/checkoutPage/step' + nextPage)
         this.currentPage += 1
       }
-      
+      this.$emit('page-controller', this.currentPage)
     },
     redirectPreviousPage(currentPage) {
       const previousPage = currentPage - 1
       if (previousPage > 0) {
-        this.$router.push('/checkoutPage/step' + previousPage)
         this.currentPage -= 1
       }
-      
+      this.$emit('page-controller', this.currentPage)
     }
   }
 }
