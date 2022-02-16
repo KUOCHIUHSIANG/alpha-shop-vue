@@ -37,7 +37,7 @@
       <div class="main__cart__footer__total">
         <div class="title">小計</div>
         <div class="total">
-          <span class="total currencySymbol">{{ totalPrice }}</span>
+          <span class="total currencySymbol">{{ this.calcTotal }}</span>
         </div>
       </div>
     </div>
@@ -71,12 +71,10 @@ export default {
   },
   created() {
     this.fetchCartItems();
-    this.calcTotal();
   },
   data() {
     return {
       cartItems: [],
-      totalPrice: 0,
     };
   },
   methods: {
@@ -106,26 +104,25 @@ export default {
         }
         return item;
       });
-      this.calcTotal();
     },
+  },
+  computed: {
     calcTotal() {
-      // 渲染畫面（重新計算小計）前先歸零，不然舊小計會疊加上去
-      this.totalPrice = 0; 
+      let totalPrice = 0; 
       for (let i = 0; i < this.cartItems.length; i++) {
-        this.totalPrice += this.cartItems[i].price * this.cartItems[i].amount;
+        totalPrice += this.cartItems[i].price * this.cartItems[i].amount;
       }
       if (this.deliveryFee === '免費') {
-        return
-      } else if(this.totalPrice !== 0) {
+        return totalPrice
+      } else if(totalPrice !== 0) {
         // 讓商品數量都是0的狀況（小計是0）時，讓小計不會有運費
-        this.totalPrice += this.deliveryFee
+        totalPrice += this.deliveryFee
       }
+      return totalPrice
     },
   },
   watch: {
-    deliveryFee() {
-      this.calcTotal()
-    }
+    deliveryFee() {},
   }
 };
 </script>

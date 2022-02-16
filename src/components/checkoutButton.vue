@@ -4,14 +4,14 @@
     <div
     :class="['main__button__previous', { 'd-none': currentPage === 1}]">
       <button 
-        @click="redirectPreviousPage(currentPage)"
+        @click="redirectPreviousPage"
         class="previous">
         ← 上一步
       </button>
     </div>
     <div class="main__button__next stepOne">
       <button 
-        @click="redirectNextPage(currentPage)"
+        @click="redirectNextPage"
         class="next" 
         v-if="currentPage !== 3"
       >
@@ -41,15 +41,15 @@ export default {
     }
   },
   methods: {
-    redirectNextPage(currentPage) {
-      const nextPage = currentPage + 1
+    redirectNextPage() {
+      const nextPage = this.currentPage + 1
       if (nextPage < 4) {
         this.currentPage += 1
       }
       this.$emit('page-controller', this.currentPage)
     },
-    redirectPreviousPage(currentPage) {
-      const previousPage = currentPage - 1
+    redirectPreviousPage() {
+      const previousPage = this.currentPage - 1
       if (previousPage > 0) {
         this.currentPage -= 1
       }
